@@ -1,0 +1,539 @@
+@import 'root';
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+// header
+.header {
+    width: 100%;
+    background-color: transparent;
+    padding: 30px 50px;
+    position: absolute;
+    z-index: 1;
+    .logo {
+        padding-top: 10px;
+        position: relative;
+    }
+    @include tablet {
+        padding: 30px 0;
+    }
+}
+.menu-mobile-label {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: none;
+    @include mobile {
+        display: block;
+    }
+}
+
+.menu {
+    &__list {
+        list-style: none;
+        height: 100%;
+        float: right;
+        
+        @include mobile {
+            display: none;
+        }
+    }
+    &__item {
+        a {
+            text-decoration: none;
+            display: inline-block;
+            height: 100%;
+            padding: 12px 20px;           
+            font-size: 1rem;
+            font-weight: bold;
+            color: $white;
+            line-height: 1rem; 
+            transition: color .25s linear;
+            &:hover {
+                color: $black;
+            }
+            @include tablet {
+                font-weight: 400;
+                padding: 12px 15px;           
+            }
+        }
+        &:last-child {
+            padding:0 20px;
+            a {
+                color: $white;
+                background-color: #2d2c2c;
+                padding: 12px 24px !important;
+                height: auto;
+                border-radius: 30px;
+                &:hover {
+                    color: $turquoise;
+                }
+            }
+            @include tablet {
+                padding: 0;   
+            }
+        }
+    }
+    @include tablet {
+        padding-right: 0;
+    }
+    input#menuCheck:checked ~ ul.menu__list {
+        display: flex;
+        flex-direction: column;
+        background-color: $turquoise;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 20px;
+        li {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+}
+// banner
+.banner__text {
+    float: right;
+    text-align: left;
+    max-width: 430px;
+    width: 100%;
+    padding-top: 190px;
+    padding-bottom: 50px;
+    h1 {
+        color: $black;
+        line-height: 5.6rem;
+        font: {
+            family: Baloo Chettan;
+            size: 4.2rem;
+        }
+        margin: 0;
+        padding-bottom: 70px;
+    }
+    strong {
+        font-size: 1.65rem;
+        line-height: 2.18rem;
+        color: $black;
+    }
+    span {
+        font: {
+            family: Baloo Chettan;
+            size: 2.5em;
+            weight: bold;
+        }
+        color: $turquoise;
+        display: block;
+        line-height: 4.8rem;
+        padding-bottom: 20px;
+    }
+    @include tablet {
+        padding-top: 165px;
+        h1 {
+            font-size: 3.1rem;
+            line-height: 4.3rem;
+        }
+        span {
+            font-size: 2.05rem;
+            line-height: 2.75rem;
+        }
+    }
+    @include mobile {
+        padding-top: 130px;
+        h1 {
+            font-size: 2.3rem;
+            line-height: 3.4rem;
+        }
+    }
+}
+
+.banner__right {
+    padding-right: 0;
+    @include mobile {
+        padding: 0;
+    }
+    .banner__img {
+        height: 750px;
+        background: linear-gradient(to bottom, #0aec98 0%, #2bcc91 100%);
+        border-radius: 50% 0px 0px 50%;
+        padding: 132px 20px 0 50px;
+        @include tablet {
+            border-radius: unset;  
+            padding: 230px 20px 0 50px;
+        }
+        @include mobile {
+            height: auto;
+            padding: 40px 20px 40px 50px;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
+// about
+.about {
+    margin-top: 90px;
+    background: #23262d;
+    padding: 60px 0;
+    @include tablet {
+        margin-top: 0;
+    }
+    @include mobile {
+        margin-top: 60px;
+    }
+    .about__title {
+        text-align: center;
+        padding-bottom: 60px;
+        color: $white;
+        h2 {
+            margin-bottom: 20px;
+            margin-top: 0;
+            font: {
+                family: "Baloo Chettan";
+                size: 3.1rem;
+                weight: bold;
+            }
+        }
+        span {
+            font-size: 1.05rem;
+            line-height: 2rem;
+        }
+    }
+    .about__img {
+        margin: 0 auto;
+        text-align: center;
+        img {
+            width: 100%;
+            height: auto;
+        }
+        a {
+            background-color: #000;
+            color: $white;
+            text-decoration: none;
+            line-height: 1.8rem;
+            border-radius: 15px;
+            font-size: 1.05rem;
+            padding: 13px 0;
+            display: inline-block;
+            width: 100%;
+            max-width: 190px;
+            text-align: center;
+            transition: background-color .4s ease-in;
+            &:hover {
+                background-color: #f55171;
+            }
+        }
+    }
+}
+// build
+.build {
+    background-color: $white;
+    margin-top: 90px;
+    .build__title {
+        text-align: center;
+        padding-bottom: 60px;
+        h2 {
+            margin: 0 0 20px 0;
+            color: #030100;
+            font: {
+                family: "Baloo Chettan";
+                size: 3.1rem;
+                weight: bold;
+            }
+            line-height: 3.1rem;
+            padding: 0;
+            @include mobile {
+                font-size: 2.5rem;
+                line-height: 3.68rem;
+            }
+        }
+        span {
+            color: #23262d;
+            font-size: 1.05rem;
+            line-height: 1.75rem;
+        }
+    }
+    .build__box {
+        text-align: center;
+        background-color: $turquoise;
+        border-radius: 20px;
+        padding: 30px 33px;
+        margin-bottom: 30px;
+        color: $white;
+        @include tablet {
+            padding: 30px 10px;
+        }
+        h4 {
+            margin: 0;
+            font: {
+                size: 1.87rem;
+                weight: 500;
+            }
+            line-height: 2.5rem;
+            padding: 0;
+            @include tablet {
+                font-size: 1.31rem;
+                line-height: 1.87rem;
+            }
+        }
+        p {
+            font-size: 1.05rem;
+            line-height: 1.75rem;
+            padding-top: 25px;
+            margin: 0;
+        }
+    }
+    a.link-btn {
+        margin: 0 auto;
+        display: block;
+        margin-top: 30px;
+        background-color: #000;
+        &:hover{
+            background-color: $turquoise;
+        }
+    }
+}
+// contact
+.contact {
+    padding-top: 90px;
+    .contact__title {
+        text-align: center;
+        padding-bottom: 60px;
+        color: $black;
+        h2 {
+            font: {
+                family: "Baloo Chettan";
+                size: 3.12rem;
+                weight: bold;
+            }
+            line-height: 3.12rem;
+            padding: 0 0 10px 0;
+            margin: 0 0 20px 0;
+            @include mobile {
+                font-size: 2.5rem;
+                line-height: 3.68rem;
+            }
+        }
+        span {
+            font-size: 1.05rem;
+            line-height: 1.75rem;
+        }
+    }
+    .contact__box {
+        background-color: #2c363d;
+        .contact__form {
+            padding: 50px 0 50px 40px;
+            @include tablet {
+                padding: 50px 0;
+            }
+            .contact__input {
+                border:inherit;
+                padding: 0 19px;
+                margin-bottom: 20px;
+                width: 100%;
+                height: 60px;
+                color: #353535;
+                font-size: 1.05rem;
+                border-radius: 15px;
+            }
+            .contact__textarea {
+                @extend .contact__input;
+                height: 140px;
+                padding-top: 20px;
+            }
+            .contact__btn-send {
+                border: inherit;
+                background-color: #000;
+                margin: 25px auto 0;
+                display: block;
+                cursor: pointer;
+                &:hover {
+                    background-color: $turquoise;
+                }
+            }
+        }
+        .contact__img {
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+// offer
+.offer {
+    background-color: $turquoise;
+    margin-top: 90px;
+    padding: 0 40px;
+
+    @include tablet {
+        padding: 0 10px;
+    }
+    .offer__img {
+        img {
+            width: 100%;
+            height: auto;
+        }
+        background-color: #fff;
+        @include mobile {
+            background-color: transparent;
+        }
+    }
+    .offer__content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: $white;
+        h2 {
+            font: {
+                family: "Baloo Chettan";
+                size: 3.75rem;
+                weight: 400;
+            }
+            line-height: 4rem;
+            padding-bottom: 20px;
+            margin: 0;
+            @include tablet {
+                font-size: 1.68rem;
+                line-height: 2.5rem;
+                padding-bottom: 10px;
+            }
+            @include mobile {
+                padding-top: 25px;
+            }
+            span {
+                font: {
+                    size: 5.5rem;
+                    weight: 600;
+                }
+                @include tablet {
+                    font-size: 2.62rem;
+                    font-weight: 500;
+                }
+            }
+        }
+        p {
+            font: {
+                size: 1.05rem;
+                weight: 300
+            }
+            margin: 0;
+            line-height: 1.75rem;
+            @include mobile {
+                padding-bottom: 30px;
+            }
+        }
+    }
+}
+// testimonial
+.testimonial {
+    margin-top: 90px;
+    padding-bottom: 120px;
+    .testimonial__title {
+        text-align: center;
+        padding-bottom: 60px;
+        h2 {
+            color: #1c1b1b;
+            margin: 0;
+            font: {
+                size: 3.12rem;
+                family: "Baloo Chettan";
+            }
+            line-height: 3.12rem;
+            padding: 0;
+            @include mobile {
+                font-size: 2.5rem;
+                line-height: 3.68rem;
+            }
+        }
+    }
+    .testimonial__content {
+        text-align: center;
+        h3 {
+            font: {
+                family: "Baloo Chettan";
+                size: 1.87rem;
+            }
+            color: $turquoise;
+            margin: 0;
+            line-height: 2rem;
+            padding-bottom: 40px;
+        }   
+        .testimonial__text {
+            em {
+                font-size: 1.05rem;                
+                color: #1c1b1b;
+                line-height: 1.75rem;
+                font-weight: 300;
+                padding: 0 10px; 
+            }
+            img {
+                position: relative;
+                top: 3px;
+            }
+        }
+        .testimonial__list-direct {
+            list-style: none;
+            padding: 0;
+            padding-top: 30px;
+            li {
+                display: inline-block;
+                padding: 2px;
+                a {
+                    width: 14px;
+                    height: 14px;
+                    display: block;
+                    background-color: $lightgreen;
+                    &.active {
+                        background-color: #000;
+                    }
+                }
+            }
+        }
+    }
+}
+// footer
+footer {
+    border-top: 1px solid #000;
+    font-family: Poppins;
+    padding-top: 50px;
+    h3 {
+        margin: 0;
+        color: #0c0c0e;
+        font: {
+            family: "Baloo Chettan";
+            size: 2.3rem;
+        }
+        line-height: 3.4rem;
+        strong {
+            color: $turquoise;
+            font: {
+                weight: bold;
+                size: 2.5rem;
+            }
+        }
+    }
+    .footer-contact  {
+        text-align: end;
+        @include mobile {
+            text-align: start;
+        }
+    }
+    .copyright {
+        margin-top: 43px;
+        padding: 20px 0;
+        background-color: #23262d;
+        p {
+            color: $white;
+            font-size: 1.1rem;
+            line-height: 1.8rem;
+            margin: 0;
+            font-weight: 300;
+            text-align: center;
+        }
+    }
+}

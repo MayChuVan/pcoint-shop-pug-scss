@@ -1,0 +1,146 @@
+doctype html 
+html(lang="en")
+    head 
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title pcoint
+        link(rel="stylesheet", href="css/nomalize.css")
+        link(rel="stylesheet", href="css/style.css")
+    body 
+        header.header
+            .container 
+                .row 
+                    .col-3.logo
+                        a(href="index.html")
+                            img(src="./images/logo.png", alt="pcoint logo")
+                        label.menu-mobile-label(for="menuCheck")
+                            img(src="./images/menu_icon.png", alt="menuicon") 
+                    .col-9.menu
+                        input#menuCheck(type="checkbox" hidden)
+                        - let menu = {"index.html": "HOME", "#about": "ABOUT", "#contact": "CONTACT US", "#": "Sign in"};
+                        ul.menu__list.row
+                            each value, key in menu 
+                                li.menu__item 
+                                    a(href=key)=value 
+        section.banner
+            .row
+                .col-5.banner__left
+                    .banner__text 
+                        h1 
+                            |Computer 
+                            br    
+                            |and 
+                            br
+                            |laptop shop
+                        strong Free Multipurpose Responsive
+                        span Landing Page 2019
+                        a.link-btn(href="#") Buy Now
+                .col-7.banner__right
+                    .banner__img
+                        img(src="./images/top_img.png" alt="banner image")
+        section#about.about 
+            .container
+                .row
+                    .col-12 
+                        .about__title 
+                            h2 About Pcoint
+                            span d to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum gener
+                .row
+                    .col-8.about__img 
+                        img(src="./images/about_img.png" alt="about us image")
+                        a(href="#") Read more
+        section.build
+            .container
+                .row
+                    .col-12
+                        .build__title
+                            h2 Build With Best 
+                            span Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                .row
+                    - let buildBox = {"500GB": "MICRO SD CARD", "100GB": "INTERNAL RAM", "100%": "HIGH QUALITY"}
+                    each text, size in buildBox
+                        .col-4
+                            .build__box
+                                h4 #{size}
+                                h4 #{text}
+                                P Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t dolor in reprehenderit in voluptate velit
+                    .col-12
+                        a.link-btn(href="#") Read more 
+        section#contact.contact 
+            .container
+                .row
+                    .col-12 
+                        .contact__title
+                            h2 Request a Call back
+                            span
+                                |Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                br 
+                                |incididunt ut labore et dolore magna
+                .row 
+                    .col-12 
+                        .row.contact__box 
+                            .col-7
+                                .contact__form
+                                    .row 
+                                        .col-12
+                                            input.contact__input(type="text", name="name", placeholder="Name")
+                                        .col-12
+                                            input.contact__input(type="text", name="phone", placeholder="Phone Number")
+                                        .col-12
+                                            input.contact__input(type="text", name="email", placeholder="Email")        
+                                        .col-12
+                                            textarea.contact__textarea(name="message", placeholder="Message")
+                                        .col-12 
+                                            button.contact__btn-send.link-btn Send    
+                            .col-5 
+                                .contact__img 
+                                    img(src="./images/mane_img.jpg", alt="contact image")
+        section.offer
+            .row 
+                .col-6 
+                    .offer__img 
+                        img(src="./images/leptop.jpg", alt="offer image")
+                .col-6 
+                    .offer__content 
+                        h2 
+                            span 15% 
+                            |Offer everyday
+                        p There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable
+        section.testimonial
+            .container
+                .row
+                    .col-12
+                        .testimonial__title 
+                            h2 Testimonial
+                .row
+                    .col-12 
+                        .testimonial__content
+                            h3 Michl ro
+                            .testimonial__text 
+                                img(src="./images/te1.png", alt="quote")
+                                em There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable
+                                img(src="./images/te2.png", alt="quote")
+                            ul.testimonial__list-direct 
+                                li
+                                    a.active(href="#")
+                                li
+                                    a(href="#")
+                                li
+                                    a(href="#")              
+        footer
+            .container 
+                .row 
+                    .col-6.footer-text
+                        h3 
+                            strong Free Multipurpose
+                            br
+                            |Responsive Landing Page 2019
+                    .col-6.footer-contact 
+                        h3 
+                            strong Call Now
+                            br
+                            |(+1) 12345667890
+            .copyright
+                .row 
+                    .col-12
+                        p © 2019 All Rights Reserved. Design by Free Html Templates

@@ -1,0 +1,77 @@
+@use "sass:math";
+@function divideCol($num) {
+    @return math.div($num, 12) * 100%;
+}
+
+@mixin tablet {
+    @media only screen and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media only screen and (max-width: 740px) {
+        @content;
+    }
+}
+
+$turquoise: #2bcc91;
+$black: #2D2C2C;
+$white: #fff;
+$lightgreen: #41c365;
+
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        width: divideCol($i);
+        padding: 0 15px;
+    }
+    @media only screen and (max-width: 576px) {
+        .col-#{$i} {
+            width: 100%;
+        }
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    &::after {
+        content: "";
+        clear: both;
+    }
+}
+
+.container {
+    width: 95%;
+    padding: 0 15px;
+    margin: 0 auto;
+    @include mobile {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+.link-btn {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    color: $white;
+    background-color: $black;
+    padding: 13px 0;
+    width: 100%;
+    max-width: 190px;
+    text-align: center;
+    display: inline-block;
+    transition: border-radius ease-in .5s;
+    border-radius: 15px;
+    text-decoration: none;
+    &:hover {
+        background-color: $turquoise;
+        border-radius: 26px;
+        transition: border-radius ease-in .5s;
+    }
+}
